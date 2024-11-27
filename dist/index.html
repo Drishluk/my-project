@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s ease;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #bd3ec5;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to My Project!</h1>
+<p>This is a basic HTML page where you can change the background color.</p>
+
+<!-- Button to change background color -->
+<button id="colorButton">Change Background Color</button>
+
+<script>
+    src="bundle.js"
+    // JavaScript to change the background color
+    const button = document.getElementById('colorButton');
+
+    const colors = ['#FF6347', '#3CB371', '#87CEEB', '#FFD700', '#8A2BE2', '#FF1493'];
+    let currentColorIndex = 0;
+
+    button.addEventListener('click', () => {
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        document.body.style.backgroundColor = colors[currentColorIndex];
+    });
+</script>
+</body>
+</html>
